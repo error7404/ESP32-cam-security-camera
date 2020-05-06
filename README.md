@@ -10,7 +10,7 @@ const char* ssid = "SSID";
 const char* password = "PASS";
 ```
 
-you need to put the interval that you want the pictures to be tacken and where by indicating the server adress\s\s
+you need to put the interval that you want the pictures to be tacken and where by indicating the server adress  
 ⚠ don't foget to put http:// even if it is a local server like 192.168.1.10 and to put the full URL that finish by .php ⚠
 ```cpp
 const int capture_interval = 5000; // Microseconds between captures

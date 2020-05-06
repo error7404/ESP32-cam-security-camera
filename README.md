@@ -11,7 +11,7 @@ const char* password = "PASS";
 ```
 
 you need to put the interval that you want the pictures to be tacken and where by indicating the server adress  
-⚠ don't foget to put http:// even if it is a local server like 192.168.1.10 and to put the full URL that finish by .php ⚠
+⚠ don't foget to put http:// even if it is a local server like http://192.168.1.10/index.php and to put the full URL that finish by .php ⚠
 ```cpp
 const int capture_interval = 5000; // Microseconds between captures
 const char *post_url = "http://SERVER.php"; // Location where images are POSTED

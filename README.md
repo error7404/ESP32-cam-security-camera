@@ -39,7 +39,7 @@ and at last, you need to choose the resolution of the picture by uncommenting wi
 ```
 
 ### Server side
-on a server add index.php, css.css, cokkies.js, cam/cam1.php, cam/cam2.php in the same folder  
+on a server add index.php, css.css, cokkies.js, cam/cam1.php, cam/cam2.php in the same folder    
 the picutre taken by the esp32cam will be put in the folder cam of it as cam1.jpg and cam2.jpg (if you have an other ESP32 cam and you modify the code to point to cam2.php) so be sure that it is available to write by the programme  
 a simple fix is juste to do a `sudo chmod 777 /var/www/html/cam` if you have a simple rasbian webserver
 

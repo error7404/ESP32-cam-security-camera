@@ -12,7 +12,7 @@ const char* ssid = "SSID";
 const char* password = "PASS";
 
 const int capture_interval = 5000; // Microseconds between captures
-const char *post_url = "http://website.com/cam/cam1"; // Location where images are POSTED
+const char *post_url = "http://website.com/cam/cam1.php"; // Location where images are POSTED
 
 const char* open_hour = "11"; //the opening hour
 const char* close_hour= "14"; //the closing hour
@@ -213,7 +213,7 @@ bool go(){
   String Day = String(timeWeekDay);
   String Hour = String(timeHour);
   if(Day == "6" or Day == "7"){Serial.println("le self n'est pas ouvert le weekend");return false;}
-  else if(Hour > open_hour and Hour < close_hour){Serial.println("Le self est ouvert"); return true;}//14 11
+  else if(Hour >= open_hour and Hour < close_hour){Serial.println("Le self est ouvert"); return true;}//14 11
   else{Serial.println("le self est fermer ce n'est pas l'heure");return false;}
   Serial.println(&timeinfo, "%a, %B %d %Y %H:%M:%S");
 }
@@ -226,8 +226,8 @@ void loop()
     Serial.print("no connexion: reconecting");
     init_wifi();
     if(WiFi.SSID() != ""){Serial.println("Reconected! ヽ(^o^)ノ");delay(2000);fails = 0;}
-    else if(fails > 30){Serial.println("not reconected T_T trying every 2sec");delay(2000);fails++;}
-    else{{Serial.println("not reconected T_T trying every 2min");delay(120000);}}
+    else if(fails < 30){Serial.println("not reconected T_T trying every 2sec");delay(2000);fails++;}
+    else{{Serial.println("not reconected T_T trying every 2min");delay(120000);fails++;}}
     }
   else{current_millis = millis();
     if (current_millis - last_capture_millis > capture_interval) { // Take another picture

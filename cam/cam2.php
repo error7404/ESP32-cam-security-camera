@@ -4,4 +4,4 @@
     file_put_contents($fileToWrite, $received);
 ?>
 
-502 acces dennied
+502 acces denied
